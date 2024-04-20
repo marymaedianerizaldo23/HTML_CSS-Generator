@@ -1,0 +1,152 @@
+h1 {
+ color: red;
+ font-size: 24px;
+ font-style: italic;
+ text-decoration: underline;
+ background-color: blue;
+}
+h2 {
+ color: blue;
+ background-color: red;
+}
+#try {
+ color: blue;
+ background-color: white;
+ font-size: 24px;
+}
+h3 {
+ color: green;
+}
+h5 {
+ color: purple;
+}
+h4 {
+ color: orange;
+}
+h6 {
+ color: orange;
+ font-style: italic;
+}
+p {
+ font-size: 50px;
+}
+img {
+ border:  2px solid #000;
+ border-radius: 10px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ padding: 10px;
+ max-width: 100%;
+ height: auto;
+ width: 100px;
+}
+span {
+ color: blue;
+ font-weight: bold;
+ font-size: 50px;
+}
+button {
+ background-color : #4CAF50;
+ color : orange;
+ padding :  15px 32px;
+}
+.container {
+ display: flex;
+}
+.box {
+ width: 100px;
+ background-color: #f0f0f0;
+ border: 1px solid #000;
+ margin: 0 10px;
+ height: 100px;
+}
+ol {
+ width: 100px;
+ background-color: #f0f0f0;
+ border: 1px solid #000;
+ margin: 0 10px;
+ height: 100px;
+}
+li {
+ list-style-type: square;
+ padding: 5px;
+}
+ul {
+ width: 100px;
+ background-color: #f0f0f0;
+ border: 1px solid #000;
+ margin: 0 10px;
+ height: 100px;
+}
+li {
+ width: 100px;
+ height: 100px;
+ background-color: #f0f0f0;
+ border: 1px solid #000;
+ margin: 0 10px;
+}
+abbr {
+ font-style: italic;
+ color: #333;
+}
+cite {
+ font-style: italic;
+ color: #555;
+}
+code {
+ font-family: monospace;
+ background-color: #f0f0f0;
+}
+dfn {
+ font-weight: bold;
+ color: #007bff;
+}
+samp {
+ background-color: #ffffcc;
+ color: #333;
+ padding: 5px;
+}
+var {
+ font-style: italic;
+ color: #e83e8c;
+}
+article {
+ background-color: #f0f0f0;
+ padding: 10px;
+}
+aside {
+ background-color: #f0f0f0;
+ padding: 10px;
+}
+footer {
+ background-color: #f0f0f0;
+ padding: 10px;
+}
+main {
+ background-color: #f0f0f0;
+ padding: 10px;
+}
+nav {
+ background-color: #f0f0f0;
+ padding: 10px;
+}
+address {
+ background-color: #f0f0f0;
+ padding: 10px;
+}
+a {
+ color: red;
+ text-decoration: none;
+}
+blockquote {
+ font-style: italic;
+ color: #555;
+ border-left: 5px solid #ccc;
+ padding: 10px;
+ margin: 10px 0;
+}
+q {
+ font-style: italic;
+ color: #777;
+ padding: 5px;
+ margin: 5px 0;
+}

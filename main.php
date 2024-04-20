@@ -17,6 +17,21 @@ use ListNamespace\OrderedList;
 use ListNamespace\ListTag;
 use ListNamespace\UnorderedList;
 use Section\sectionTag;
+use textStructure\abbreviationTag;
+use textStructure\citeTag;
+use textStructure\codeTag;
+use textStructure\definitionTag;
+use textStructure\sampleTag;
+use textStructure\variableTag;
+use ContentGrouping\articleTag;
+use ContentGrouping\asideTag;
+use ContentGrouping\footerTag;
+use ContentGrouping\mainTag;
+use ContentGrouping\navTag;
+use Address\addressTag;
+use Anchor\anchorTag;
+use Quotation\blockquoteTag;
+use Quotation\quoteTag;
 
 $html = file_get_contents('front.html');
 $styler = new HtmlStylerH1();
@@ -165,4 +180,121 @@ $styler->addStyle("width", "100px")
         ->addStyle("border", "1px solid #000")
         ->addStyle("margin", "0 10px");
 $styler->applyStyles();
-file_put_contents("front.htlm", $html);
+file_put_contents("front.html", $html);
+
+$html = file_get_contents("front.html");
+$styler = new AbbreviationTag();
+$styler->addStyle("font-style", "italic")
+    ->addStyle("color", "#333");
+$styler->applyStyles();
+file_put_contents("front.html",$html);
+
+
+$html = file_get_contents("front.html");
+$styler = new CiteTag();
+$styler->addStyle("font-style", "italic")
+    ->addStyle("color", "#555");
+$styler->applyStyles();
+file_put_contents("front.html",$html);
+
+
+$html = file_get_contents("front.html");
+$styler = new CodeTag();
+$styler->addStyle("font-family", "monospace")
+    ->addStyle("background-color", "#f0f0f0");
+$styler->applyStyles();
+file_put_contents("front.html",$html);
+
+
+$html = file_get_contents("front.html");
+$styler = new DefinitionTag();
+$styler->addStyle("font-weight", "bold")
+    ->addStyle("color", "#007bff");
+$styler->applyStyles();
+file_put_contents("front.html",$html);
+
+
+$html = file_get_contents("front.html");
+$styler = new SampleTag();
+$styler->addStyle("background-color", "#ffffcc")
+    ->addStyle("color", "#333")
+    ->addStyle("padding", "5px");
+$styler->applyStyles();
+file_put_contents("front.html",$html);
+
+// Styling for Variable Tag
+$html = file_get_contents("front.html");
+$styler = new VariableTag();
+$styler->addStyle("font-style", "italic")
+    ->addStyle("color", "#e83e8c");
+$styler->applyStyles();
+file_put_contents("front.html",$html);
+
+
+$html = file_get_contents("front.html");
+$styler = new articleTag();
+$styler->addStyle("background-color", "#f0f0f0")
+    ->addStyle("padding", "10px");
+$styler->applyStyles($html);
+file_put_contents("front.html", $html);
+
+$html = file_get_contents("front.html");
+$styler = new asideTag();
+$styler->addStyle("background-color", "#f0f0f0")
+    ->addStyle("padding", "10px");
+$styler->applyStyles($html);
+file_put_contents("front.html", $html);
+
+$html = file_get_contents("front.html");
+$styler = new footerTag();
+$styler->addStyle("background-color", "#f0f0f0")
+    ->addStyle("padding", "10px");
+$styler->applyStyles($html);
+file_put_contents("front.html", $html);
+
+$html = file_get_contents("front.html");
+$styler = new mainTag();
+$styler->addStyle("background-color", "#f0f0f0")
+    ->addStyle("padding", "10px");
+$styler->applyStyles($html);
+file_put_contents("front.html", $html);
+
+$html = file_get_contents("front.html");
+$styler = new navTag();
+$styler->addStyle("background-color", "#f0f0f0")
+    ->addStyle("padding", "10px");
+$styler->applyStyles($html);
+file_put_contents("front.html", $html);
+
+$html = file_get_contents("front.html");
+$styler = new AddressTag();
+$styler->addStyle("background-color", "#f0f0f0")
+    ->addStyle("padding", "10px");
+$styler->applyStyles($html);
+file_put_contents("front.html", $html);
+
+$html = file_get_contents("front.html");
+$styler = new AnchorTag();
+$styler->addStyle("color", "red") // Blue color
+->addStyle("text-decoration", "none"); // No underline
+$styler->applyStyles($html);
+file_put_contents("front.html", $html);
+
+$html = file_get_contents("front.html");
+$blockquoteStyler = new BlockquoteTag();
+$blockquoteStyler->addStyle("font-style", "italic")
+    ->addStyle("color", "#555")
+    ->addStyle("border-left", "5px solid #ccc") // Gray left border
+    ->addStyle("padding", "10px")
+    ->addStyle("margin", "10px 0"); // Add margin for spacing
+$blockquoteStyler->applyStyles($html);
+file_put_contents("front.html", $html);
+
+$html = file_get_contents("front.html");
+$quoteStyler = new QuoteTag();
+$quoteStyler->addStyle("font-style", "italic")
+    ->addStyle("color", "#777")
+    ->addStyle("padding", "5px")
+    ->addStyle("margin", "5px 0"); // Add margin for spacing
+$quoteStyler->applyStyles($html);
+file_put_contents("front.html", $html);
