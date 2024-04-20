@@ -8,6 +8,7 @@ use Headings\HtmlStylerH3;
 use Headings\HtmlStylerH4;
 use Headings\HtmlStylerH5;
 use Headings\HtmlStylerH6;
+use Paragraph\P_tag;
 
 
 $html = file_get_contents('front.html');
@@ -62,5 +63,12 @@ $html = file_get_contents('front.html');
 $styler = new HtmlStylerH6();
 $styler->addStyle("color","orange")
        ->addStyle("font-style","italic");
+$styler->applyStyles($html);
+file_put_contents("front.html",$html);
+
+
+$html = file_get_contents('front.html');
+$styler = new P_tag();
+$styler->addStyle('font-size','50px');
 $styler->applyStyles($html);
 file_put_contents("front.html",$html);
