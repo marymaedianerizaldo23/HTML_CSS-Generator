@@ -11,6 +11,7 @@ use Headings\HtmlStylerH6;
 use Paragraph\P_tag;
 use Image\imgTag;
 use Span\spanTag;
+use Button\buttonTag;
 
 $html = file_get_contents('front.html');
 $styler = new HtmlStylerH1();
@@ -95,3 +96,12 @@ $styler->addStyle('color', 'blue')
         ->addStyle('font-size', '50px');
 $styler->applyStyles($html);
 file_put_contents("front.html",$html);
+
+$html = file_get_contents('front.html');
+$styler = new buttonTag();
+$styler->addStyle('background-color', '#4CAF50')
+    ->addStyle('color', 'orange')
+    ->addStyle('padding', ' 15px 32px');
+$styler->applyStyles($html);
+file_put_contents("front.html",$html);
+

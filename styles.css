@@ -44,3 +44,8 @@ span {
  font-weight : bold;
  font-size : 50px;
 }
+button {
+ background-color : #4CAF50;
+ color : orange;
+ padding :  15px 32px;
+}
