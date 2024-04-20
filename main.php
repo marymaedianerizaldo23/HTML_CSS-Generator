@@ -14,6 +14,8 @@ use Span\spanTag;
 use Button\buttonTag;
 use Div\divTag;
 use ListNamespace\OrderedList;
+use ListNamespace\ListTag;
+use ListNamespace\UnorderedList;
 
 $html = file_get_contents('front.html');
 $styler = new HtmlStylerH1();
@@ -128,11 +130,28 @@ file_put_contents("front.html",$html);
 
 $html = file_get_contents("front.html");
 $styler =  new OrderedList();
-$styler->setSelector('.box')
-    ->addStyle("width","100px")
+$styler->addStyle("width","100px")
     ->addStyle("background-color","#f0f0f0")
-    ->addStyle("border","#1px solid #000")
+    ->addStyle("border","1px solid #000")
     ->addStyle("margin","0 10px")
     ->addStyle("height","100px");
 $styler->applyStyles();
+file_put_contents("front.html",$html);
+
+$html = file_get_contents("front.html");
+$styler =  new ListTag();
+$styler->addStyle("list-style-type", "square")
+    ->addStyle("padding", "5px");
+$styler->applyStyles();
+$styler->applyStyles();
+file_put_contents("front.html",$html);
+
+
+$html = file_get_contents("front.html");
+$styler =  new UnorderedList();
+$styler->addStyle("width","100px")
+    ->addStyle("background-color","#f0f0f0")
+    ->addStyle("border","1px solid #000")
+    ->addStyle("margin","0 10px")
+    ->addStyle("height","100px");$styler->applyStyles();
 file_put_contents("front.html",$html);
