@@ -16,6 +16,7 @@ use Div\divTag;
 use ListNamespace\OrderedList;
 use ListNamespace\ListTag;
 use ListNamespace\UnorderedList;
+use Section\sectionTag;
 
 $html = file_get_contents('front.html');
 $styler = new HtmlStylerH1();
@@ -122,7 +123,7 @@ $styler =  new divTag();
 $styler->setSelector('.box')
     ->addStyle("width","100px")
     ->addStyle("background-color","#f0f0f0")
-    ->addStyle("border","#1px solid #000")
+    ->addStyle("border","1px solid #000")
     ->addStyle("margin","0 10px")
     ->addStyle("height","100px");
 $styler->applyStyles();
@@ -143,7 +144,6 @@ $styler =  new ListTag();
 $styler->addStyle("list-style-type", "square")
     ->addStyle("padding", "5px");
 $styler->applyStyles();
-$styler->applyStyles();
 file_put_contents("front.html",$html);
 
 
@@ -153,5 +153,16 @@ $styler->addStyle("width","100px")
     ->addStyle("background-color","#f0f0f0")
     ->addStyle("border","1px solid #000")
     ->addStyle("margin","0 10px")
-    ->addStyle("height","100px");$styler->applyStyles();
+    ->addStyle("height","100px");
+$styler->applyStyles();
 file_put_contents("front.html",$html);
+
+$html = file_get_contents("front.html");
+$styler = new sectionTag();
+$styler->addStyle("width", "100px")
+        ->addStyle("height", "100px")
+        ->addStyle("background-color", "#f0f0f0")
+        ->addStyle("border", "1px solid #000")
+        ->addStyle("margin", "0 10px");
+$styler->applyStyles();
+file_put_contents("front.htlm", $html);
