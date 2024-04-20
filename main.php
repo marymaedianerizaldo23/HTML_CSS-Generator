@@ -9,7 +9,8 @@ use Headings\HtmlStylerH4;
 use Headings\HtmlStylerH5;
 use Headings\HtmlStylerH6;
 use Paragraph\P_tag;
-
+use Image\imgTag;
+use Span\spanTag;
 
 $html = file_get_contents('front.html');
 $styler = new HtmlStylerH1();
@@ -32,10 +33,11 @@ file_put_contents('front.html', $html);
 // Load HTML file again
 $html = file_get_contents('front.html');
 $styler = new HtmlStylerH1();
-$styler->setSelector('#try') 
+$styler->setSelector('#try')
        ->addStyle('color', 'pink')
        ->addStyle('background-color', 'white')
-       ->addStyle('font-size', '24px');
+       ->addStyle('font-size', '24px')
+       ->addStyle('color', 'blue');
 $styler->applyStyles($html);
 file_put_contents('front.html', $html);
 
@@ -70,5 +72,26 @@ file_put_contents("front.html",$html);
 $html = file_get_contents('front.html');
 $styler = new P_tag();
 $styler->addStyle('font-size','50px');
+$styler->applyStyles($html);
+file_put_contents("front.html",$html);
+
+$html = file_get_contents('front.html');
+$styler = new imgTag();
+$styler->addStyle('border', ' 2px solid #000')
+       ->addStyle('border-radius', '10px')
+       ->addStyle('box-shadow', '0 4px 8px rgba(0, 0, 0, 0.1)')
+       ->addStyle('padding' , '10px')
+       ->addStyle('max-width','100%')
+       ->addStyle('height', 'auto')
+       ->addStyle('width', '100px');
+$styler->applyStyles($html);
+file_put_contents("front.html", $html);
+
+
+$html = file_get_contents('front.html');
+$styler = new spanTag();
+$styler->addStyle('color', 'blue')
+        ->addStyle('font-weight', 'bold')
+        ->addStyle('font-size', '50px');
 $styler->applyStyles($html);
 file_put_contents("front.html",$html);
