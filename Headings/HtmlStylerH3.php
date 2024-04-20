@@ -1,31 +1,14 @@
 <?php
+namespace Headings;
+require_once __DIR__ . '/../HtmlStylerBase.php';
 
- namespace Headings;
 
-class HtmlStylerH3{
-    private $styles = [];
-    private $selector = 'h3';
+use HtmlStylerBase;
+class HtmlStylerH3 extends HtmlStylerBase {
+    protected $styles = [];
+    protected $selector = 'h3';
 
-    public  function addStyle($property, $value){
-        $this->styles[$property] = $value;
-        return $this;
+    public function __construct($styles = [], $selector = 'h3') {
+        parent::__construct($styles, $selector);
     }
-
-    public  function setSelector($selector){
-        $this->selector = $selector;
-        return $this;
-    }
-
-
-    public function applyStyles(&$html){
-        $css = "$this->selector {\n";
-    
-        foreach ($this->styles as $property => $value) {
-            $css .= " $property: $value;\n";
-        }
-    
-        $css .= "}\n";
-    
-        file_put_contents('styles.css', $css, FILE_APPEND);
-        }
 }

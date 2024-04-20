@@ -1,29 +1,14 @@
 <?php
-
 namespace Span;
+require_once __DIR__ . '/../HtmlStylerBase.php';
 
-class spanTag{
 
-    private $styles = [];
-    private $selector = 'span';
+use HtmlStylerBase;
+class spanTag extends HtmlStylerBase {
+    protected $styles = [];
+    protected $selector = 'span';
 
-    public function addStyle($property,$value){
-        $this->styles[$property] = $value;
-        return $this;
-    }
-
-    public function setSelector($selector){
-        $this->selector = $selector;
-        return $this;
-    }
-
-    public function applyStyles(){
-        $css = "$this->selector {\n";
-
-        foreach($this->styles as $property => $value){
-            $css .= " $property : $value;\n";
-        }
-        $css .= "}\n";
-        file_put_contents("styles.css", $css, FILE_APPEND);
+    public function __construct($styles = [], $selector = 'span') {
+        parent::__construct($styles, $selector);
     }
 }
