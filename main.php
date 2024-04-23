@@ -32,6 +32,15 @@ use Address\addressTag;
 use Anchor\anchorTag;
 use Quotation\blockquoteTag;
 use Quotation\quoteTag;
+use Strong\strongTag;
+use Em\emTag;
+use Input\inputTag;
+use Label\labelTag;
+use TextArea\textareaTag;
+use TableSpace\tableTag;
+use TableSpace\trTag;
+use TableSpace\tdTag;
+
 
 $html = file_get_contents('front.html');
 $styler = new HtmlStylerH1();
@@ -297,4 +306,54 @@ $quoteStyler->addStyle("font-style", "italic")
     ->addStyle("padding", "5px")
     ->addStyle("margin", "5px 0"); // Add margin for spacing
 $quoteStyler->applyStyles($html);
+
+$html = file_get_contents('front.html');
+$strongStyler = new strongTag();
+$strongStyler->addStyle('font-weight', 'bold')
+             ->addStyle('color', 'blue');
+$strongStyler->applyStyles($html);
+
+$html = file_get_contents('front.html');
+$emStyler = new emTag();
+$emStyler->addStyle('font-style', 'italic');
+$emStyler->applyStyles($html);
+
+$html = file_get_contents('front.html');
+$inputStyler = new inputTag();
+$inputStyler->addStyle('border', '1px solid #ccc')
+            ->addStyle('padding', '5px');
+$inputStyler->applyStyles($html);
+
+$html = file_get_contents('front.html');
+$labelStyler = new labelTag();
+$labelStyler->addStyle('font-weight', 'bold')
+            ->addStyle('color', 'blue');
+$labelStyler->applyStyles($html);
+
+$html = file_get_contents('front.html');
+$textareaStyler = new textareaTag();
+$textareaStyler->addStyle('border', '1px solid #ddd')
+               ->addStyle('padding', '5px');
+$textareaStyler->applyStyles($html);
+
+
+$html = file_get_contents('front.html');
+$tableStyler = new tableTag();
+$tableStyler->addStyle('border-collapse', 'collapse')
+            ->addStyle('width', '100%')
+            ->addStyle('background-color', '#fff') 
+            ->addStyle('border', '1px solid #ddd'); 
+$tableStyler->applyStyles($html);
+
+$html = file_get_contents('front.html');
+$trStyler = new trTag();
+$trStyler->addStyle('background-color', '#f9f9f9'); 
+$trStyler->applyStyles($html);
+
+$html = file_get_contents('front.html');
+$tdStyler = new tdTag();
+$tdStyler->addStyle('padding', '8px')
+         ->addStyle('border', '1px solid #ddd'); 
+$tdStyler->applyStyles($html);
+
 file_put_contents("front.html", $html);
