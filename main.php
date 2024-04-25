@@ -357,3 +357,12 @@ $tdStyler->addStyle('padding', '8px')
 $tdStyler->applyStyles($html);
 
 file_put_contents("front.html", $html);
+
+
+
+$html = file_get_contents('front.html');
+$psuedo = new HtmlStylerH4();
+$psuedo->setSelector('#ouch:hover');
+$psuedo->addStyle('color', 'pink');
+$psuedo->applyStyles($html);
+file_put_contents('front.html', $html);
